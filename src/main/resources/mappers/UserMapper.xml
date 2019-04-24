@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.securitydemo.dao.UserMapper">
+    
+    <resultMap id="BaseResultMap" type="com.example.securitydemo.entity.User">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="findByUsername" resultMap="BaseResultMap">
+        select * from user where username = #{username}
+    </select>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user(
+          ID,
+          USERNAME,
+          PASSWORD
+        ) VALUES (
+          #{id},
+          #{username},
+          #{password}
+        )
+    </insert>
+</mapper>
