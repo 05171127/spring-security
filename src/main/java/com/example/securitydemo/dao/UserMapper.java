@@ -10,5 +10,5 @@ import com.example.securitydemo.entity.User;
 public interface UserMapper {
     User findByUsername(String username);
 
-    User save(User userToAdd);
+    void save(User userToAdd);
 }

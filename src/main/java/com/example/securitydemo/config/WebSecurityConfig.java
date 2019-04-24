@@ -44,9 +44,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-    @Bean
+    /*@Bean
     public PasswordEncoder passwordEncoder(){
         return new MyPasswordEncoder();
+    }*/
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
     /**
      * @Description: HttpSecurity定义了哪些URL路径应该被拦截

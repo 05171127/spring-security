@@ -49,15 +49,17 @@ public class AuthServiceImpl implements AuthService {
 
     // 注册
     @Override
-    public User register(User userToAdd ) {
+    public User register(User user ) {
 
-        final String username = userToAdd.getUsername();
+        final String username = user.getUsername();
         if( userMapper.findByUsername(username)!=null ) {
+            //已经注册了
             return null;
         }
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        final String rawPassword = userToAdd.getPassword();
-        userToAdd.setPassword( encoder.encode(rawPassword) );
-        return userMapper.save(userToAdd);
+        final String rawPassword = user.getPassword();
+        user.setPassword( encoder.encode(rawPassword) );
+        userMapper.save(user);
+        return userMapper.findByUsername(user.getUsername());
     }
 }
