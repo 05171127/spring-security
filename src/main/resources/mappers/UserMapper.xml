@@ -7,7 +7,7 @@
         <result property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="password" column="password"/>
-        <collection property="roles" column="id" select="com.example.securitydemo.dao.RoleMapper.byId"/>
+        <collection property="roles" column="id" select="com.example.securitydemo.dao.RoleMapper.byUserId"/>
     </resultMap>
 
     <select id="findByUsername" resultMap="BaseResultMap">

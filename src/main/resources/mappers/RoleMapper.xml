@@ -9,7 +9,7 @@
         <result property="userId" column="user_id"/>
     </resultMap>
 
-    <select id="byId" resultMap="BaseResultMap">
-        select * from role where id = #{id}
+    <select id="byUserId" resultMap="BaseResultMap">
+        select * from role where user_id = #{userId}
     </select>
 </mapper>

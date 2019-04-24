@@ -8,5 +8,5 @@ import com.example.securitydemo.entity.Role;
  * @create 2019-04-24 18:38
  */
 public interface RoleMapper {
-    public Role byId(int i);
+    public Role byUserId(Integer userId);
 }
