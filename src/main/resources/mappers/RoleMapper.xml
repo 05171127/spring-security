@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.securitydemo.dao.RoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.securitydemo.entity.Role">
+        <result property="id" column="id"/>
+        <result property="roleName" column="role_name"/>
+        <result property="userId" column="user_id"/>
+    </resultMap>
+
+    <select id="byId" resultMap="BaseResultMap">
+        select * from role where id = #{id}
+    </select>
+</mapper>
